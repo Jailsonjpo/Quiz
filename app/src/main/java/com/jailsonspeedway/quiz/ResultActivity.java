@@ -3,8 +3,10 @@ package com.jailsonspeedway.quiz;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
@@ -30,8 +32,11 @@ public class ResultActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt("totalScore", totalScore);
         editor.commit();
-
-
-
     }
+
+    public void returnTop(View view){
+        Intent intent = new Intent(getApplicationContext(), StartActivity.class);
+        startActivity(intent);
+    }
+
 }
